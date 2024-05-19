@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif; /* Changement de la police */
+  font-size: 16px;
+  line-height: 1.6; /* Augmentation de la hauteur de ligne */
+  color: wheat;
+  background-color: #f4f4f4;
+  background-image: url("./home_coming_son.png"); /* Ajout de l'image de fond */
+  background-size: cover;
+  background-position: center;
+  display: flex; /* Utilisation de flexbox pour centrer le contenu */
+  align-items: top;
+  justify-content: end;
+  margin: 5vh 3vw 0 0;
+  height: 100vh;
+}
+
+.content {
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  color: wheat; /* Changement de la couleur pour une meilleure lisibilité */
+  margin-bottom: 1.5rem; /* Augmentation de la marge basse */
+}
+
+p {
+  font-size: 1.5rem;
+  color: we; /* Légère variation de couleur */
+  margin-bottom: 2rem; /* Augmentation de la marge basse */
+}
+
+/* Ajout de styles pour le lien */
+a {
+  color: #fff; /* Changement de la couleur du lien */
+  text-decoration: none; /* Suppression du soulignement */
+  font-weight: 600; /* Renforcement de l'épaisseur de la police */
+  transition: color 0.3s ease; /* Transition fluide de la couleur */
+}
+
+a:hover {
+  color: #67a7ff; /* Changement de couleur au survol */
+}

@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Dev by Antho</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#services">SERVICES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#stagesDev">COMPÉTENCES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#pf">PORTFOLIO</a>
+        </li>
+        <!--<li class="nav-item">
+          <a class="nav-link" href="#tarifs">TARIFS</a>
+        </li>-->
+        <li class="nav-item">
+          <a class="nav-link" href="#apropos">À PROPOS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">CONTACT</a>
+        </li>
+        {% if is_granted('ROLE_ADMIN') %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              GESTION
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{{ path('app_services') }}">Services</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('app_logout') }}">DECONNEXION</a>
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>

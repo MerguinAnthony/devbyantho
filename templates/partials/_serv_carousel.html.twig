@@ -1,0 +1,26 @@
+<div class="container d-flex align-items-center justify-content-center vh-75">
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      {% for service in services %}
+        <div class="carousel-item {% if loop.first %}active{% endif %}">
+          <div class="d-flex align-items-center justify-content-center h-100">
+            <div class="text-center text-white">
+              <h1>{{ service.Nom }}</h1>
+              <p>{{ service.AbrevDef }}</p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!-- Ajoutez les flèches de contrôle en dehors du conteneur -->
+<a class="carousel-control-prev" role="button" data-slide="prev">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+</a>
+<a class="carousel-control-next" role="button" data-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+</a>
+
+<script src="{{ asset('assets/js/slide_carousel.js') }}"></script>

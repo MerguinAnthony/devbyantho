@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dev by Antho | Developpeur web{% endblock %}
+
+{% block body %}
+<style>
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font1);
+}
+
+h1 {
+  font-size: 3rem;
+  color: white;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: var(--clr-primary);
+}
+.accueil {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+</style>
+
+<section class="accueil">
+  <img src="{{ asset('assets/jpg/home_background.jpg') }}" alt="Photo de fond" class="home__background">
+  {% include "partials/_nav.html.twig" %}
+  {% include "partials/_serv_carousel.html.twig" %}
+</section>
+  {% include "partials/_services.html.twig" %}
+  {% include "partials/_stages.html.twig" %}
+{% endblock %}
