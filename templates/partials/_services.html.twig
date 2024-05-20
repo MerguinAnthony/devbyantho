@@ -1,31 +1,38 @@
 <style>
-.services {
-  padding: 50px 0;
-  position: relative;
-  top: 0;
-  background-color: #f8f9fa;
-  height: auto;
-}
+  .services {
+    padding: 50px 0;
+    position: relative;
+    top: 0;
+    background-color: #f8f9fa;
+    height: auto;
+  }
 
-.card {
-  border: none;
-  border-radius: 50px;
-  transition: 0.4s;
-}
+  .card {
+    border: none;
+    border-radius: 20px; /* Réduit le rayon des coins pour les appareils mobiles */
+    transition: 0.4s;
+  }
 
-.btn-primary {
-  background-color: #f4623a;
-  border-color: #f4623a;
-}
+  .btn-primary {
+    background-color: #f4623a;
+    border-color: #f4623a;
+  }
 
-.btn-primary:hover {
-  background-color: #f4623a;
-  border-color: #f4623a;
-}
+  .btn-primary:hover {
+    background-color: #f4623a;
+    border-color: #f4623a;
+  }
 
-.card:hover {
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-}
+  .card:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Ajout de styles pour les images des services */
+  .card-img {
+    width: 50px; /* Taille de l'image ajustée pour les appareils mobiles */
+    height: 50px; /* Taille de l'image ajustée pour les appareils mobiles */
+    border-radius: 10px; /* Réduit le rayon des coins pour les appareils mobiles */
+  }
 </style>
 
 <section class="container-fluid py-5" id="services">
@@ -42,10 +49,10 @@
       <div class="col-md-6 mb-4">
         <div class="card h-100 d-flex align-items-stretch">
           <div class="row no-gutters">
-            <div class="col-md-1 mt-4 ms-4">
+            <div class="col-md-12 col-sm-3 mt-3 text-center"> <!-- Ajustement de la colonne pour les appareils mobiles -->
               <img class="card-img" src="{{ asset('assets/servicesImg/' ~ service.ImageName) }}" alt="{{ service.Nom }}">
             </div>
-            <div class="col-md-10">
+            <div class="col-md-12 col-sm-9"> <!-- Ajustement de la colonne pour les appareils mobiles -->
               <div class="card-body text-left">
                 <h4 class="card-title">{{ service.Nom }}</h4>
                 <p class="card-text text-muted">{{ service.Description }}</p>

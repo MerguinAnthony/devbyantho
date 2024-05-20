@@ -1,33 +1,46 @@
 <style>
-.stagesDev {
-  padding: 50px 0;
-  position: relative;
-  top: 0;
-  background-color: #f8f9fa;
-  height: auto;
-}
+    .stagesDev {
+      padding: 50px 0;
+      position: relative;
+      top: 0;
+      background-color: #f8f9fa;
+      height: auto;
+    }
 
-.card {
-  border: none;
-  border-radius: 50px;
-  transition: 0.4s;
-}
+    .skils {
+      padding: 50px 0;
+      position: relative;
+      top: 0;
+      background-color: #feeeee;
+      height: auto;
+    }
 
-.btn-primary {
-  background-color: #f4623a;
-  border-color: #f4623a;
-}
+    .progress-group {
+      width: 60%;
+      margin: 0 auto;
+      text-align: left;
+    }
 
-.btn-primary:hover {
-  background-color: #f4623a;
-  border-color: #f4623a;
-}
+    .progress-group h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-.card:hover {
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-}
-</style>
+    .progress-bar {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding-left: 10px;
+      height: 30px; /* Increase the height */
+      font-size: 1.1em; /* Increase font size */
+    }
 
+    .progress {
+      background-color: #e0e0e0; /* Change background color for better contrast */
+      border-radius: 15px; /* Rounded corners */
+      margin: 30px 0;
+    }
+  </style>
 
   <div class="container-fluid bg-dark py-5" id="stagesDev">
     <div class="row">
@@ -37,6 +50,96 @@
         <hr class="divider my-4">
       </div>
     </div>
-    <div class="row"
-    
-  
+    <div class="row text-center">
+    <div class="col-md-4 mb-4">
+        <span class="fa-stack fa-4x">
+            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+        </span>
+        <h4 class="my-3 text-white">1. Café et analyse</h4>
+        <p style="color: #f5f5dc;">Nous analysons vos besoins et définissons ensemble les objectifs de votre projet.</p>
+    </div>
+    <div class="col-md-4 mb-4">
+        <span class="fa-stack fa-4x">
+            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+            <i class="fas fa-pencil-ruler fa-stack-1x fa-inverse"></i>
+        </span>
+        <h4 class="my-3 text-white">2. Conception</h4>
+        <p style="color: #f5f5dc;">Nous concevons une maquette de votre projet pour vous donner un aperçu du résultat final.</p>
+    </div>
+    <div class="col-md-4 mb-4">
+        <span class="fa-stack fa-4x">
+            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+            <i class="fas fa-code fa-stack-1x fa-inverse"></i>
+        </span>
+        <h4 class="my-3 text-white">3. Développement</h4>
+        <p style="color: #f5f5dc;">Nous développons votre projet en respectant les normes de qualité et de sécurité.</p>
+    </div>
+</div>
+<div class="row text-center">
+    <div class="col-md-4 mb-4">
+        <span class="fa-stack fa-4x">
+            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+            <i class="fas fa-cogs fa-stack-1x fa-inverse"></i>
+        </span>
+        <h4 class="my-3 text-white">4. Tests</h4>
+        <p style="color: #f5f5dc;">Nous testons votre projet pour vérifier son bon fonctionnement et corriger les éventuels bugs.</p>
+    </div>
+    <div class="col-md-4 mb-4">
+        <span class="fa-stack fa-4x">
+            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+            <i class="fas fa-upload fa-stack-1x fa-inverse"></i>
+        </span>
+        <h4 class="my-3 text-white">5. Mise en ligne</h4>
+        <p style="color: #f5f5dc;">Nous mettons en ligne votre projet et vous accompagnons dans sa mise en production.</p>
+    </div>
+    <div class="col-md-4 mb-4">
+        <span class="fa-stack fa-4x">
+            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+            <i class="fas fa-certificate fa-stack-1x fa-inverse"></i>
+        </span>
+        <h4 class="my-3 text-white">6. Maintenance</h4>
+        <p style="color: #f5f5dc;">Nous assurons la maintenance de votre projet pour garantir sa pérennité et sa sécurité.</p>
+    </div>
+  </div>
+  </div>
+</section>
+<section class="skills">
+  <div class="col-md-12 text-center mb-5">
+    <h2 class="text-center my-4">Compétences</h2>
+    <h3 class="section-subheading">Découvrez mes compétences techniques.</h3>
+    <hr class="divider my-4">
+  </div>
+  <div class="progress-group">
+    <div class="progress mb-5">
+      <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+        <span><i class="fas fa-code fa-lg mr-2"></i> (X)HTML - CSS</span>
+      </div>
+    </div>
+    <div class="progress mb-5">
+      <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+        <span><i class="fab fa-php fa-lg mr-2"></i> PHP</span>
+      </div>
+    </div>
+    <div class="progress mb-5">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 88%;" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+        <span><i class="fab fa-symfony fa-lg mr-2"></i> Symfony</span>
+      </div>
+    </div>
+    <div class="progress mb-5">
+      <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+        <span><i class="fab fa-js-square fa-lg mr-2"></i> JavaScript</span>
+      </div>
+    </div>
+    <div class="progress mb-5">
+      <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+        <span><i class="fas fa-database fa-lg mr-2"></i> SQL</span>
+      </div>
+    </div>
+    <div class="progress mb-5">
+      <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+        <span><i class="fab fa-wordpress fa-lg mr-2"></i> WordPress</span>
+      </div>
+    </div>
+  </div>
+</section>

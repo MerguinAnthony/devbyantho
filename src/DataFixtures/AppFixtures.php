@@ -2,9 +2,10 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Maintenance;
 use App\Entity\User;
 use App\Entity\Service;
+use App\Entity\Messages;
+use App\Entity\Maintenance;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Symfony\Component\PasswordHasher\Hasher\PasswordHasherFactoryInterface;
@@ -78,6 +79,16 @@ class AppFixtures extends Fixture
         $maintenance = new Maintenance();
         $maintenance->setSwitch(true);
         $manager->persist($maintenance);
+
+        $manager->flush();
+
+        $message = new Messages();
+        $message->setLastName('Merguin');
+        $message->setFirstName('Anthony');
+        $message->setEmail('merguinanthony@gmail.fr');
+        $message->setPhone('0607080910');
+        $message->setMessage('Bonjour, je suis intéressé par vos services de développement web. Pouvez-vous me contacter pour en discuter ?');
+        $manager->persist($message);
 
         $manager->flush();
     }

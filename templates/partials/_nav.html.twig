@@ -1,28 +1,19 @@
-<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark" style="position:fixed; width:100%; z-index:100;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Dev by Antho</a>
+    <a class="navbar-brand" href="{{ path('app_home') }}">Dev by Antho</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#services">SERVICES</a>
+          <a class="nav-link" href="{{ path('app_home') }}#services">SERVICES</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#stagesDev">COMPÉTENCES</a>
+          <a class="nav-link" href="{{ path('app_home') }}#stagesDev">COMPÉTENCES</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#pf">PORTFOLIO</a>
-        </li>
-        <!--<li class="nav-item">
-          <a class="nav-link" href="#tarifs">TARIFS</a>
-        </li>-->
-        <li class="nav-item">
-          <a class="nav-link" href="#apropos">À PROPOS</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact">CONTACT</a>
+          <a class="nav-link" href="{{ path('app_contact') }}">CONTACT</a>
         </li>
         {% if is_granted('ROLE_ADMIN') %}
           <li class="nav-item dropdown">
@@ -39,6 +30,14 @@
             <a class="nav-link" href="{{ path('app_logout') }}">DECONNEXION</a>
           </li>
         {% endif %}
+      </ul>
+      <!-- Liens sociaux avec des icônes Font Awesome -->
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.facebook.com/profile.php?id=61559754902861"><i class="fab fa-facebook-f"></i></a>
+        </li>
+        
+        <!-- Ajoutez d'autres liens vers les réseaux sociaux ici -->
       </ul>
     </div>
   </div>
