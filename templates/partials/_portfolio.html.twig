@@ -1,0 +1,101 @@
+<style>
+    .projects-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .project-card {
+        border: 1px solid #e0e0e0;
+        padding: 20px;
+        border-radius: 15px;
+        width: calc(33% - 40px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background-color: #fdfdfd;
+        text-decoration: none;
+        color: #333;
+        overflow: hidden;
+    }
+
+    .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .project-card img {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        transition: transform 0.3s ease;
+    }
+
+    .project-card:hover img {
+        transform: scale(1.05);
+    }
+
+    .project-card h3 {
+        margin-top: 0;
+        font-size: 1.5em;
+        color: #6a2d83;
+    }
+
+    .project-card p {
+        margin: 10px 0;
+        font-size: 1em;
+        line-height: 1.5;
+    }
+
+    .project-card a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .section-heading {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .section-subheading {
+        font-size: 1.2em;
+        margin-bottom: 30px;
+        color: #777;
+    }
+
+    .divider {
+        width: 60px;
+        height: 4px;
+        background-color: #007bff;
+        margin: 20px auto;
+    }
+</style>
+
+<section class="container-fluid py-5" id="portfolio">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h2 class="section-heading text-uppercase font-1">Portfolio</h2>
+            <h3 class="section-subheading text-muted">Un aperçu de mes projets.</h3>
+            <hr class="divider my-4">
+        </div>
+    </div>
+    <div class="row">
+        <div class="projects-container">
+            {% for project in projects %}
+                <a href="{{ project.url }}" target="_blank" class="project-card">
+                    <img src="{{ asset('assets/projectImg/' ~ project.ImageName) }}" alt="{{ project.name }}">
+                    <h3 class="mt-2 text-center">{{ project.name }}</h3>
+                    <p class="mt-2"><strong>Client:</strong> {{ project.client }}</p>
+                    <p class="mt-2"><strong>Description:</strong><br> {{ project.description }}</p>
+                    <p class="mt-2"><strong>Technologies:</strong> 
+                        {% for technology in project.technologies %}
+                            {{ technology.name }}{% if not loop.last %}, {% endif %}
+                        {% endfor %}
+                    </p>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>

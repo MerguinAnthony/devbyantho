@@ -6,7 +6,6 @@ use DateTimeImmutable;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\ServiceRepository;
-use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: ServiceRepository::class)]
@@ -24,14 +23,8 @@ class Service
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
-    #[Vich\UploadableField(mapping: 'servicesImg', fileNameProperty: 'imageName')]
-    private ?File $imageFile = null;
-
     #[ORM\Column(nullable: true)]
     private ?string $imageName = null;
-
-    #[ORM\Column(nullable: true)]
-    private ?\DateTimeImmutable $updatedAt = null;
 
     #[ORM\Column]
     private ?bool $affichage = null;
@@ -66,22 +59,6 @@ class Service
         $this->description = $description;
 
         return $this;
-    }
-
-    public function setImageFile(?File $imageFile = null): void
-    {
-        $this->imageFile = $imageFile;
-
-        if (null !== $imageFile) {
-            // It is required that at least one field changes if you are using doctrine
-            // otherwise the event listeners won't be called and the file is lost
-            $this->updatedAt = new DateTimeImmutable();
-        }
-    }
-
-    public function getImageFile(): ?File
-    {
-        return $this->imageFile;
     }
 
     public function setImageName(?string $imageName): void

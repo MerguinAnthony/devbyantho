@@ -3,8 +3,10 @@
 namespace App\DataFixtures;
 
 use App\Entity\User;
+use App\Entity\Project;
 use App\Entity\Service;
 use App\Entity\Messages;
+use App\Entity\Technology;
 use App\Entity\Maintenance;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -89,6 +91,39 @@ class AppFixtures extends Fixture
         $message->setPhone('0607080910');
         $message->setMessage('Bonjour, je suis intéressé par vos services de développement web. Pouvez-vous me contacter pour en discuter ?');
         $manager->persist($message);
+
+        $manager->flush();
+
+        $technology = new Technology();
+        $technology->setName('HTML');
+        $manager->persist($technology);
+
+        $technology = new Technology();
+        $technology->setName('CSS');
+        $manager->persist($technology);
+
+        $technology = new Technology();
+        $technology->setName('JavaScript');
+        $manager->persist($technology);
+
+        $technology = new Technology();
+        $technology->setName('PHP');
+        $manager->persist($technology);
+
+        $technology = new Technology();
+        $technology->setName('Symfony');
+        $manager->persist($technology);
+
+        $manager->flush();
+
+        $project = new Project();
+        $project->setName('Site Vitrine pour une Agence de Communication');
+        $project->setDescription('Création d\'un site vitrine pour une agence de communication spécialisée dans le design graphique et la conception de supports de communication.');
+        $project->setClient('Agence Com\'Design');
+        $project->setUrl('https://www.comdesign.fr');
+        $project->setImageName('Capture d’écran 2024-07-15 à 14.06.01.png');
+        $project->addTechnology($technology);
+        $manager->persist($project);
 
         $manager->flush();
     }

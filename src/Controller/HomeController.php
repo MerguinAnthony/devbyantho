@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+
 use App\Repository\MaintenanceRepository;
+use App\Repository\ProjectRepository;
 use App\Repository\ServiceRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,16 +16,18 @@ class HomeController extends AbstractController
     #[Route('/', name: 'app_home')]
     public function index(
         ServiceRepository $service,
-        MaintenanceRepository $maintenance
+        MaintenanceRepository $maintenance,
+        ProjectRepository $project
     ): Response {
 
-        if ($maintenance->findOneBy(['switch' => true])) {
-            return $this->redirectToRoute('app_maintenance');
-        }
-
+        $maintenances = $maintenance->findAll();
         $services = $service->findAll();
+        $projects = $project->findAll();
+
         return $this->render('pages/home.html.twig', [
-            'services' => $services
+            'services' => $services,
+            'maintenance' => $maintenances,
+            'projects' => $projects
         ]);
     }
 }

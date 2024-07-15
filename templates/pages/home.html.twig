@@ -2,6 +2,10 @@
 
 {% block title %}Dev by Antho | Developpeur web{% endblock %}
 
+{% block header %}
+  {% include "partials/_nav.html.twig" %}
+{% endblock %}
+
 {% block body %}
 <style>
 
@@ -22,10 +26,14 @@ h2 {
 
 <section class="accueil">
   <img src="{{ asset('assets/jpg/home_background.jpg') }}" alt="Photo de fond" class="home__background">
-  {% include "partials/_nav.html.twig" %}
   {% include "partials/_serv_carousel.html.twig" %}
 </section>
   {% include "partials/_services.html.twig" %}
+  {% include "partials/_graph.html.twig" %} 
   {% include "partials/_stages.html.twig" %}
-  {% include "partials/_footer.html.twig" %}
+  {% include "partials/_portfolio.html.twig" %}
+{% endblock %}
+
+{% block footer %}
+        {% include "partials/_footer.html.twig" %}
 {% endblock %}

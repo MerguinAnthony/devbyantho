@@ -1,0 +1,54 @@
+<style>
+  .graphisme {
+    padding: 50px 0;
+    background-color: #f8f9fa;
+    height: auto;
+  }
+
+  .card {
+    border: none;
+    border-radius: 20px;
+    transition: 0.4s;
+  }
+
+  .card-body {
+    padding: 2rem;
+  }
+
+  .card-img-graphisme {
+    width: 100%; /* Ajustement de la taille de l'image */
+    height:300px;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+
+  .text-section {
+    display: flex;
+    align-items: center;
+  }
+
+  .text-content {
+    flex: 1;
+  }
+
+  .image-content {
+    flex: 1;
+    text-align: center;
+  }
+</style>
+<hr class="divider my-4 w-50 mx-auto">
+<section class="container-fluid py-5" id="Graphisme">
+  <div class="row text-section">
+    <div class="col-md-6 text-content">
+      <div class="card h-100 d-flex align-items-stretch">
+        <div class="card-body text-left">
+          <h4 class="card-title">Mes Services d'Impression et de Réalisation</h4>
+          <p class="card-text text-muted">J'offre une gamme complète de services d'impression et de réalisation pour répondre à tous vos besoins. Que ce soit pour des cartes de visite, des brochures, des affiches ou tout autre matériel imprimé, je garantis une qualité exceptionnelle à chaque étape.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 image-content">
+      <img class="card-img-graphisme" src="{{ asset('assets/png/rombo-cDnAaedOZoI-unsplash.png') }}" alt="Service Image">
+    </div>
+  </div>
+</section>

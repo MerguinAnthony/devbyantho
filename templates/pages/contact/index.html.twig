@@ -3,8 +3,7 @@
 {% block title %}Contact | DevByAntho{% endblock %}
 
 {% block body %}
-  {% include "partials/_nav.html.twig" %}
-  <section class="container-fluid py-5" id="contact">
+  <section class="container" style="padding-top:10vh;" id="contact">
     <div class="row">
       <div class="col-md-12 text-center">
         <h2 class="section-heading text-uppercase mt-5">Contact</h2> <!-- Ajout de la classe mt-4 pour l'espace au-dessus -->
@@ -40,6 +39,12 @@
         {{ form_row(form.message, {'attr': {'class': 'form-control', 'placeholder': 'Votre message', 'rows': 6}}) }}
       </div>
 
+      {# RGPD #}
+      <div class="col-12 mt-3">
+        {{ form_row(form.rgpd) }}
+        {{ form_errors(form.rgpd) }}
+      </div>
+
       {# Bouton Envoyer #}
       <div class="col-12 mt-3 mx-auto">
         {{ form_row(form.submit, {'attr': {'class': 'btn btn-primary'}}) }}
@@ -56,5 +61,4 @@
       }
     }, 10000); // 10 secondes en millisecondes
   </script>
-  {% include "partials/_footer.html.twig" %}
 {% endblock %} 

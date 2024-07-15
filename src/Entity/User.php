@@ -4,15 +4,11 @@ namespace App\Entity;
 
 use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
-
 #[ORM\Entity(repositoryClass: UserRepository::class)]
-#[ORM\Table(name: '`user`')]
 #[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_EMAIL', fields: ['email'])]
-#[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -62,10 +58,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return (string) $this->email;
     }
 
+    public function changeAccountType(int $typeCount): void
+    {
+        if ($typeCount == 1) {
+            $this->setRoles(['ROLE_USER']);
+        } elseif ($typeCount == 2) {
+            $this->setRoles(['ROLE_ADMIN']);
+        }
+    }
+
     /**
      * @see UserInterface
-     *
-     * @return list<string>
      */
     public function getRoles(): array
     {
@@ -76,9 +79,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return array_unique($roles);
     }
 
-    /**
-     * @param list<string> $roles
-     */
     public function setRoles(array $roles): static
     {
         $this->roles = $roles;

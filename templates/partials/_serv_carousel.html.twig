@@ -1,26 +1,25 @@
-<div class="container d-flex align-items-center justify-content-center vh-75">
+<div class="container d-flex align-items-center justify-content-center vh-75 position-relative">
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       {% for service in services %}
         <div class="carousel-item {% if loop.first %}active{% endif %}">
           <div class="d-flex align-items-center justify-content-center h-100">
             <div class="text-center text-white">
-              <h1>{{ service.Nom }}</h1>
-              <p>{{ service.AbrevDef }}</p>
+              <h1 class="display-5 display-lg-4">{{ service.Nom }}</h1> <!-- Utilisation de la classe display-5 pour les appareils mobiles et display-lg-4 pour les autres écrans -->
+              <p class="lead lead-lg-2">{{ service.AbrevDef }}</p> <!-- Utilisation de la classe lead pour le paragraphe et lead-lg-2 pour les appareils mobiles -->
             </div>
           </div>
         </div>
       {% endfor %}
     </div>
   </div>
+  <!-- Ajoutez les flèches de contrôle en dehors du conteneur -->
+  <a class="carousel-control-prev d-none d-lg-block" role="button" data-slide="prev" style="left: 0;top: 50%;transform: translateY(-50%);">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  </a>
+  <a class="carousel-control-next d-none d-lg-block" role="button" data-slide="next" style="right: 0;top: 50%;transform: translateY(-50%);">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  </a>
 </div>
-
-<!-- Ajoutez les flèches de contrôle en dehors du conteneur -->
-<a class="carousel-control-prev" role="button" data-slide="prev">
-  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-</a>
-<a class="carousel-control-next" role="button" data-slide="next">
-  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-</a>
 
 <script src="{{ asset('assets/js/slide_carousel.js') }}"></script>
